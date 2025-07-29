@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="panel-container" >
+        <div class="sidebar">
+            <div class="sidebar-header"><h3>Online Játékosok</h3></div>
+            <div class="search-wrapper"><i class="fa-solid fa-search"></i><input type="text" id="search-bar" placeholder="Keresés..."></div>
+            <ul id="player-list"></ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="actions"><i class="fa-solid fa-bolt"></i> Műveletek</button>
+                    <button class="tab-button" data-tab="log"><i class="fa-solid fa-clipboard-list"></i> Eseménynapló</button>
+                </div>
+                <div class="self-actions">
+                    <button data-action="godmode"><i class="fa-solid fa-shield-halved"></i> Godmode</button>
+                    <button data-action="noclip"><i class="fa-solid fa-ghost"></i> Noclip</button>
+                </div>
+            </div>
+            <div class="content-body">
+                <div id="actions" class="tab-content active">
+                    <div class="placeholder"><i class="fa-solid fa-hand-pointer"></i><p>Válassz egy játékost a listából</p></div>
+                    <div class="actions-container" style="display: none;">
+                        <h3 id="selected-player-name"></h3>
+                        <div class="action-buttons">
+                            <button data-action="goto" class="action-btn"><i class="fa-solid fa-location-arrow"></i> Odamegy</button>
+                            <button data-action="bring" class="action-btn"><i class="fa-solid fa-truck-fast"></i> Idehoz</button>
+                            <button data-action="kick" class="action-btn kick"><i class="fa-solid fa-user-slash"></i> Kirúgás</button>
+                            <button data-action="ban" class="action-btn ban"><i class="fa-solid fa-gavel"></i> Kitiltás</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="log" class="tab-content">
+                    <div class="log-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
